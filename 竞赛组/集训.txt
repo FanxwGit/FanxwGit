@@ -1,0 +1,8 @@
+day1：二分，双指针，单调栈，单调队列，
+day2：KMP，哈希映射，并查集，带权并查集
+day3:  图论入门，图的DFS,BFS，拓扑排序，trie树
+day4  最短路算法（Dijkstra，Bellman-Ford，SPFA，Floyd）
+day5: 最小生成树（Prim，Kruskal），二分图算法（染色，匈牙利）
+day6: 数论（质数，快速幂，矩阵快速幂，同余，中剩，组合数）
+day7: 线性dp，状压dp
+
