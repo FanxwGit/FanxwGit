@@ -34,8 +34,6 @@ Git安装后有三个程序
 * Git CMD：windows风格的命令行
 * Git Gui： 不推荐初学者使用
 
-![image-20220210110656568](C:\Users\37802\Desktop\image-20220210110656568.png)s
-
 
 
 * 查看用户全局配置文件
@@ -73,7 +71,7 @@ git config --global user.email "fanxuwei@foxmail.com"
 
 Git本地有三个工作区域：工作目录（Working Directory）、暂存区(Stage/Index)、资源库(Repository或Git Directory)。如果在加上远程的git仓库(Remote Directory)就可以分为四个工作区域。文件在这四个区域之间的转换关系如下：
 
-![å¾ç](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0NJ4L9OPI9ia1MmibpvDd6cSddBdvrlbdEtyEOrh4CKnWVibyfCHa3lzXw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20220210234046215](git总结.assets/image-20220210234046215.png)
 
 - Workspace：工作区，就是你平时存放项目代码的地方
 - Index / Stage：暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息
