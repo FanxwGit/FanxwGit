@@ -1905,7 +1905,15 @@ query就会解析url之中的查询参数。
 **全局前置守卫**：在跳转之前触发回调函数
 
 ```js
-//实例对象给外部使用const router = new VueRouter({    routes: routes,}                             );//全局导航守卫router.beforeEach((to, from, next) => {    //to 代表目的路由参数对象    //from 代表当前位置的路由参数对象    //next 是函数变量 next() 代表放行    console.log(to);    console.log(from);    next()});
+//实例对象给外部使用
+const router = new VueRouter({ routes: routes, });
+//全局导航守卫
+//to 代表目的路由参数对象
+//from 代表当前位置的路由参数对象
+//next 是函数变量 next() 代表放行
+router.beforeEach((to, from, next) => {
+  console.log(to); console.log(from); next()
+});
 ```
 
 * `next()`的调用方式
