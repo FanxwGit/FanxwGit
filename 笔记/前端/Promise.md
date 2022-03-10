@@ -121,7 +121,6 @@ let promise = new Promise(function(resolve, reject) {
 
   `.then` 的第二个参数也是一个函数，该函数将在 promise rejected 后运行并接收 error。
 
-  
 
   * catch(errorHandlingFunction)  
 
@@ -131,7 +130,7 @@ let promise = new Promise(function(resolve, reject) {
 
   * finally` 处理程序（handler）没有参数。在 `finally` 中，我们不知道 promise 是否成功。没关系，因为我们的任务通常是执行“常规”的定稿程序（finalizing procedures）。
 
-  
+
 
   ```js
   let promise = new Promise(function(resolve, reject) {
