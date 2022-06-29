@@ -225,7 +225,7 @@ Spring管理的bean对象是具有生命周期的，可以设置初始化和销�
 
 # 依赖注入方式
 
-## Sette注入
+## 1. Sette注入
 
 比如下面的book实现类,利用setter给bookDao赋值
 
@@ -261,5 +261,103 @@ public class BookServiceImpl implements BookService, InitializingBean, Disposabl
         <property name="connectionNum" value="100"/>
         <property name="databaseName" value="mysql"/>
     </bean>
+```
+
+## 2. 构造器注入
+
+利用配置，给构造方法注入Bean对象,配置代码如下
+
+小细节:
+
+1. name表示形参的变量名
+2. index可以指定参数的个数
+
+```xml
+    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl">
+        <constructor-arg index="0" ref="userDao"/>
+        <constructor-arg name="bookDao" ref="bookDao"/>
+    </bean
+```
+
+
+
+==依赖注入的选择==：可选的依赖项选择setter，构造器注入必须要进行配置。
+
+
+
+## 3. 依赖自动装配
+
+> IoC容器可利用bean对象的 “autowire” 进行自动装配
+>
+> 可选值有
+>
+> 1)byType 根据当前已经声明的bean对象的类型进行注入，必须保证同类的bean对象唯一
+>
+> 2)byName 根据当前声明的bean对象的名字和参数匹配进行注入，必须保证同类的bean对象
+>
+> 注意点有：
+>
+> 1）自动装配优先级最低，并且不推荐用自动装配
+
+``` java
+  <bean id="bookService" class="com.BookServiceImpl" autowire="byType"></bean>
+```
+
+## 4. 集合注入
+
+> Sping管理的bean对象也支持下类对象的直接注入
+>
+> 1)数组
+> 2)List
+>
+> 3)Set
+>
+> 4)Map
+>
+> 5)Properties
+
+```xml
+ <!--数组注入-->
+<property name="array">
+    <array>
+        <value>100</value>
+        <value>200</value>
+        <value>300</value>
+    </array>
+</property>
+<!--list集合注入-->
+<property name="list">
+    <list>
+        <value>itcast</value>
+        <value>itheima</value>
+        <value>boxuegu</value>
+        <value>chuanzhihui</value>
+    </list>
+</property>
+<!--set集合注入-->
+<property name="set">
+    <set>
+        <value>itcast</value>
+        <value>itheima</value>
+        <value>boxuegu</value>
+        <value>boxuegu</value>
+    </set>
+</property>
+<!--map集合注入-->
+<property name="map">
+    <map>
+        <entry key="country" value="china"/>
+        <entry key="province" value="henan"/>
+        <entry key="city" value="kaifeng"/>
+    </map>
+</property>
+<!--Properties注入-->
+<property name="properties">
+    <props>
+        <prop key="country">china</prop>
+        <prop key="province">henan</prop>
+        <prop key="city">kaifeng</prop>
+    </props>
+</property>
 ```
 
